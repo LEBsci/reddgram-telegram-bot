@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:6-alpine
+    container_name: reddgram-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    networks:
+      - reddgram-network
+
+  bot:
+    build: .
+    container_name: reddgram-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    networks:
+      - reddgram-network
+
+volumes:
+  redis-data:
+
+networks:
+  reddgram-network:
+    driver: bridge

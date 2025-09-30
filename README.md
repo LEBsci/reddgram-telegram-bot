@@ -4,6 +4,50 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/suhasa010/reddgram-telegram-bot)
 
+## Deployment Options
+
+### Docker Deployment (Recommended)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/suhasa010/reddgram-telegram-bot.git
+   cd reddgram-telegram-bot
+   ```
+
+2. Create a `.env` file from the example:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Edit `.env` and add your Telegram Bot Token:
+   ```
+   BOT_TOKEN=your_bot_token_here
+   REDIS_HOST=redis
+   REDIS_PORT=6379
+   ```
+
+4. Build and run with Docker Compose:
+   ```bash
+   docker-compose up -d
+   ```
+
+5. Check logs:
+   ```bash
+   docker-compose logs -f bot
+   ```
+
+6. Stop the bot:
+   ```bash
+   docker-compose down
+   ```
+
+### Manual Deployment
+
+1. Install Redis locally
+2. Create a `.env` file with your configuration
+3. Install dependencies: `npm install`
+4. Run: `npm start`
+
 New features: 
 *EMOJI MODE* -- /emoji A new way to browse subreddits.
 *Multireddit* -- Now combine multiple subreddits and browse your own multireddit. eg. /gifs+pics+videos (long press to copy)
