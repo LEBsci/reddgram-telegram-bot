@@ -19,11 +19,11 @@
         "BOT_TOKEN": {
             "description": "Get this value from @BotFather > New Bot > API Token"
         },
-        "HOST": {
+        "REDIS_HOST": {
             "description": "Hostname of the redis server from redislabs or localhost if you're hosting it locally"
         },
-        "PORT": {
-            "description": "Enter Port number of redis host"
+        "REDIS_PORT": {
+            "description": "Enter Port number of redis host (default: 6379)"
         }
     },
     "buildpacks": [{
